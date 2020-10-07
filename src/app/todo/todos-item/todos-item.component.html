@@ -1,0 +1,14 @@
+<!-- La lista de items debe tener la clase de editando cuando se esta editando o completado cuando ya esta completado -->
+<!-- Completado tachado y editando permite escribir -->
+<!-- editing o completed -->
+<li [ngClass]="{'completed':todo.completado,'editing':editando}">
+    <div class="view">
+        <input class="toggle" type="checkbox" [formControl]="chkField" [checked]="todo.completado" />
+
+        <label (click)="editar()">{{ todo.texto}}</label>
+
+        <button (click)="borrarTodo()" class="destroy"></button>
+    </div>
+
+    <input class="edit" [value]="todo.texto" [formControl]="txtInput" (blur)="terminarEdicion()" #txtInputFisico />
+</li>

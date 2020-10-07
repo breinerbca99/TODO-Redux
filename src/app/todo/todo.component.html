@@ -1,0 +1,17 @@
+<section class="todoapp">
+    <!-- Esto agrega una nueva tarea -->
+    <app-todo-add></app-todo-add>
+
+
+    <!-- Esto se debe ocultar cuando no hay tareas -->
+    <section class="main">
+        <input id="toggle-all" class="toggle-all" type="checkbox" />
+        <label (click)="toggleAll()" for="toggle-all">Mark all as complete</label>
+
+        <!-- Lista de todos las tareas -->
+        <app-todos-list></app-todos-list>
+    </section>
+
+    <app-todo-footer></app-todo-footer>
+
+</section>
